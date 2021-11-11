@@ -1,0 +1,265 @@
+{
+	"info": {
+		"_postman_id": "1e7d28c5-0511-42b5-9377-ed23805ed0c0",
+		"name": "Posts",
+		"description": "Module 5 - Week 4 - Posts\nAuthors:\n\tOriel Chaverra\n\tDanny Barrantes\n\tFredy Zurita\n\tSonia Rojas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "create user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Luis Lopez",
+									"type": "text"
+								},
+								{
+									"key": "email",
+									"value": "llopez@hotmail.com",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "abcd1234",
+									"type": "text"
+								},
+								{
+									"key": "bio",
+									"value": "Soy quien quiero ser hoy día",
+									"type": "text"
+								},
+								{
+									"key": "avatar",
+									"type": "file",
+									"src": "/C:/Users/Fredy Zurita/Desktop/avatar.png"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://actividad4-grupo2.herokuapp.com/api/users",
+							"protocol": "https",
+							"host": [
+								"actividad4-grupo2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"email\":\"llopez@hotmail.com\",\n\t\"password\":\"abcd1234\"\n}"
+						},
+						"url": {
+							"raw": "https://actividad4-grupo2.herokuapp.com/api/login",
+							"protocol": "https",
+							"host": [
+								"actividad4-grupo2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "https://actividad4-grupo2.herokuapp.com/api/logout",
+							"protocol": "https",
+							"host": [
+								"actividad4-grupo2",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"api",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "http://localhost:8000/api/posts",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MThjN2VkZmVhZDIwNzM3N2E4ZDNjMWMiLCJleHAiOjE2MzY2MDEyMzAsImlhdCI6MTYzNjU5NzYzMH0.gi5bhYpZHNDqBpqgeQaMw8oGtohfEqEUY78Mjc_NyG0"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\":\"Post 3\",\n\t\"text\":\"Post 3\",\n\t\"author\":\"Luis López\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/posts",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"posts"
+					]
+				},
+				"description": "Create post"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/posts/:id",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MThjN2VkZmVhZDIwNzM3N2E4ZDNjMWMiLCJleHAiOjE2MzY2MDEyMzAsImlhdCI6MTYzNjU5NzYzMH0.gi5bhYpZHNDqBpqgeQaMw8oGtohfEqEUY78Mjc_NyG0"
+					}
+				],
+				"url": {
+					"raw": "https://actividad4-grupo2.herokuapp.com/api/posts/618c7fc7ead207377a8d3c21",
+					"protocol": "https",
+					"host": [
+						"actividad4-grupo2",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"posts",
+						"618c7fc7ead207377a8d3c21"
+					]
+				},
+				"description": "Get Post by id"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/posts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2MThjN2VkZmVhZDIwNzM3N2E4ZDNjMWMiLCJleHAiOjE2MzY2MDEyMzAsImlhdCI6MTYzNjU5NzYzMH0.gi5bhYpZHNDqBpqgeQaMw8oGtohfEqEUY78Mjc_NyG0"
+					}
+				],
+				"url": {
+					"raw": "https://actividad4-grupo2.herokuapp.com/api/posts",
+					"protocol": "https",
+					"host": [
+						"actividad4-grupo2",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"posts"
+					]
+				},
+				"description": "Get all posts"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/posts",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"text\":\"Text: Post 2...\"\n}"
+				},
+				"url": {
+					"raw": "https://actividad4-grupo2.herokuapp.com/api/posts/61762fcab8007f1d57776992",
+					"protocol": "https",
+					"host": [
+						"actividad4-grupo2",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"posts",
+						"61762fcab8007f1d57776992"
+					]
+				},
+				"description": "Update Post"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8000/api/posts/:id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "https://actividad4-grupo2.herokuapp.com/api/posts/61777eabf9d34d938d4ff983",
+					"protocol": "https",
+					"host": [
+						"actividad4-grupo2",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"api",
+						"posts",
+						"61777eabf9d34d938d4ff983"
+					]
+				},
+				"description": "Delete post"
+			},
+			"response": []
+		}
+	]
+}
